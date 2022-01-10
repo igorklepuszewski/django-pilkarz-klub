@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block widok %}
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Imie</td>
+        <td>Nazwisko</td>
+        <td>Klub</td>
+    </tr>
+    {% for pilkarz in pilkarze %}
+    <tr>
+        <td>{{ pilkarz.id }}</td>
+        <td>{{ pilkarz.imie }}</td>
+        <td>{{ pilkarz.nazwisko }}</td>
+        <td>{{ pilkarz.klub }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+
+{% endblock widok %}
