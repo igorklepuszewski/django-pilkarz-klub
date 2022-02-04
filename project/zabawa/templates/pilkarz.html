@@ -6,6 +6,7 @@
         <td>Imie</td>
         <td>Nazwisko</td>
         <td>Klub</td>
+        <td>Przycisk</td>
     </tr>
     {% for pilkarz in pilkarze %}
     <tr>
@@ -13,6 +14,13 @@
         <td>{{ pilkarz.imie }}</td>
         <td>{{ pilkarz.nazwisko }}</td>
         <td>{{ pilkarz.klub }}</td>
+        <td>
+            <a href="{% url 'pilkarz_detail' pilkarz.id %}">
+                <button type="button" class="btn btn-primary">
+                    Przejdz do szczegolow
+                </button>
+            </a>
+        </td>
     </tr>
     {% endfor %}
 </table>
